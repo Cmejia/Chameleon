@@ -35,6 +35,7 @@
 #import "UIViewAnimationGroup.h"
 #import "UIViewBlockAnimationDelegate.h"
 #import "UIViewController.h"
+#import "UIAppearanceInstance.h"
 #import "UIApplication+UIPrivate.h"
 #import "UIGestureRecognizer+UIPrivate.h"
 #import <QuartzCore/CALayer.h>
@@ -132,6 +133,11 @@ static BOOL _animationsEnabled = YES;
     return (UIResponder *)[self _viewController] ?: (UIResponder *)_superview;
 }
 
+- (id)_appearanceContainer
+{
+    return self.superview;
+}
+
 - (NSArray *)subviews
 {
     NSArray *sublayers = _layer.sublayers;
@@ -162,6 +168,7 @@ static BOOL _animationsEnabled = YES;
             [self resignFirstResponder];
         }
         
+        [self _setAppearanceNeedsUpdate];
         [self willMoveToWindow:toWindow];
 
         for (UIView *subview in self.subviews) {
@@ -797,6 +804,14 @@ static BOOL _animationsEnabled = YES;
 
 - (void)layoutSubviews
 {
+}
+
+- (void)_layoutSubviews
+{
+    [self _updateAppearanceIfNeeded];
+    [[self _viewController] viewWillLayoutSubviews];
+    [self layoutSubviews];
+    [[self _viewController] viewDidLayoutSubviews];
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event

@@ -49,13 +49,12 @@ static void releasePatternImage(void *info)
 static CGPatternRef CreateImagePattern(CGImageRef image)
 {
     NSCParameterAssert(image);
-    CGImageRetain(image);
     int width = CGImageGetWidth(image);
     int height = CGImageGetHeight(image);
     static const CGPatternCallbacks callbacks = {0, &drawPatternImage, &releasePatternImage};
-    return CGPatternCreate (image,
+    return CGPatternCreate (CGImageRetain(image),
                             CGRectMake (0, 0, width, height),
-                            CGAffineTransformMake (1, 0, 0, -1, 0, height),
+                            ((floorf(NSAppKitVersionNumber) == NSAppKitVersionNumber10_7)? CGAffineTransformMake (1, 0, 0, -1, 0, height) : CGAffineTransformIdentity),
                             width,
                             height,
                             kCGPatternTilingConstantSpacing,
@@ -108,7 +107,7 @@ static UIColor *ClearColor = nil;
 
 - (void)dealloc
 {
-    CGColorRelease(_color);
+    if (_color) CGColorRelease(_color);
     [super dealloc];
 }
 
