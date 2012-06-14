@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, The Iconfactory. All rights reserved.
+ * Copyright (c) 2012, The Iconfactory. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -27,17 +27,21 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "CALayer+UIKitCompatibility.h"
+#import <Foundation/Foundation.h>
 
-@implementation CALayer (UIKitCompatibility)
+@class UIImageRep;
 
-- (CGFloat)contentsScale
-{
-    return 1.0;
+@interface UIColorRep : NSObject {
+    CGColorRef _CGColor;
+    UIImageRep *_patternImageRep;
 }
 
-- (void)setContentsScale:(CGFloat)newContentsScale
-{
-}
+- (id)initWithPatternImageRepresentation:(UIImageRep *)patternImageRep;
+- (id)initWithCGColor:(CGColorRef)color;
+
+@property (nonatomic, readonly) CGColorRef CGColor;
+@property (nonatomic, readonly) CGFloat scale;
+@property (nonatomic, readonly) UIImageRep *patternImageRep;
+@property (nonatomic, readonly, getter=isOpaque) BOOL opaque;
 
 @end
