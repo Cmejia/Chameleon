@@ -1,11 +1,5 @@
-//
-//  UINSCellControl.h
-//  UIKit
-//
-//  Created by Jim Dovey on 11-03-23.
-//
 /*
- * Copyright (c) 2011, The Iconfactory. All rights reserved.
+ * Copyright (c) 2012, The Iconfactory. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -34,23 +28,28 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "UIControl.h"
 
-@class NSCell, UIImage, UIFont;
-
-@interface UINSCellControl : UIControl {
-@private
-    NSCell *		_cell;
+@interface UIImageRep : NSObject {
+    CGFloat _scale;
+    CGImageSourceRef _imageSource;
+    NSInteger _imageSourceIndex;
+    CGImageRef _image;
 }
 
-+ (UINSCellControl *)checkboxWithFrame:(CGRect)frame;
++ (NSArray *)imageRepsWithContentsOfFile:(NSString *)file;
 
-- (id)initWithFrame:(CGRect)frame cell:(NSCell *)cell;
+- (id)initWithCGImageSource:(CGImageSourceRef)source imageIndex:(NSUInteger)index scale:(CGFloat)scale;
+- (id)initWithCGImage:(CGImageRef)image scale:(CGFloat)scale;
+- (id)initWithData:(NSData *)data;
 
-@property (nonatomic, readonly) NSCell * cell;
+// note that the cordinates for fromRect are in the image's *scaled* coordinate system, not in raw pixels
+// so for a 100x100px image with a scale of 2, the largest valid fromRect is of size 50x50.
+- (void)drawInRect:(CGRect)rect fromRect:(CGRect)fromRect;
 
-@property (nonatomic, copy) NSString * title;
-@property (nonatomic, copy) UIImage * image;
-@property (nonatomic, copy) UIFont * font;
+@property (nonatomic, readonly) CGSize imageSize;
+@property (nonatomic, readonly) CGImageRef CGImage;
+@property (nonatomic, readonly, getter=isLoaded) BOOL loaded;
+@property (nonatomic, readonly) CGFloat scale;
+@property (nonatomic, readonly, getter=isOpaque) BOOL opaque;
 
 @end
