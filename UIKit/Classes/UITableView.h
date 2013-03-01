@@ -51,6 +51,8 @@ extern NSString *const UITableViewIndexSearch;
 - (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @protocol UITableViewDataSource <NSObject>
@@ -165,6 +167,7 @@ typedef enum {
 
 - (void)scrollToNearestSelectedRowAtScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
 - (void)scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
+- (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate;
 
@@ -182,5 +185,5 @@ typedef enum {
 @property (nonatomic, getter=isEditing) BOOL editing;
 @property (nonatomic) CGFloat sectionHeaderHeight;
 @property (nonatomic) CGFloat sectionFooterHeight;
-
+@property(nonatomic) BOOL allowsMultipleSelectionDuringEditing;
 @end
