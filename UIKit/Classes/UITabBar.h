@@ -34,6 +34,7 @@
  */
 
 #import "UIView.h"
+#import "UIInterface.h"
 
 @class UITabBar, UITabBarItem;
 
@@ -67,5 +68,5 @@
 - (void)beginCustomizingItems:(NSArray *)items;
 - (BOOL)endCustomizingAnimated:(BOOL)animated;
 - (BOOL)isCustomizing;
-
+@property (nonatomic,assign) UIBarStyle barStyle;
 @end

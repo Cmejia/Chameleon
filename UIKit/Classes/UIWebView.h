@@ -40,7 +40,7 @@ enum {
 };
 typedef NSUInteger UIWebViewNavigationType;
 
-@class UIWebView, UIViewAdapter, WebView;
+@class UIWebView, UIViewAdapter, UIScrollView, WebView;
 
 @protocol UIWebViewDelegate <NSObject>
 @optional
@@ -81,5 +81,5 @@ typedef NSUInteger UIWebViewNavigationType;
 @property (nonatomic, assign) BOOL scalesPageToFit; // not implemented
 @property (nonatomic, readonly, retain) NSURLRequest *request;
 @property (nonatomic) UIDataDetectorTypes dataDetectorTypes;
-
+@property (nonatomic,readonly) UIScrollView *scrollView;
 @end

@@ -37,5 +37,5 @@
 - (void)setOn:(BOOL)on animated:(BOOL)animated;
 
 @property(nonatomic, getter=isOn) BOOL on;
-
+@property(nonatomic, retain) UIColor *onTintColor;
 @end

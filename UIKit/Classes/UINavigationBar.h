@@ -30,6 +30,12 @@
 #import "UIToolbar.h"
 #import "UIView.h"
 
+
+typedef NS_ENUM(NSInteger, UIBarMetrics) {
+    UIBarMetricsDefault,
+    UIBarMetricsLandscapePhone,
+};
+
 @class UIColor, UINavigationItem, UINavigationBar;
 
 @protocol UINavigationBarDelegate <NSObject>
@@ -67,12 +73,13 @@
 - (void)setItems:(NSArray *)items animated:(BOOL)animated;
 - (void)pushNavigationItem:(UINavigationItem *)item animated:(BOOL)animated;
 - (UINavigationItem *)popNavigationItemAnimated:(BOOL)animated;
-
+- (void)setTitleVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
 @property (nonatomic, assign) UIBarStyle barStyle;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, readonly, retain) UINavigationItem *topItem;
 @property (nonatomic, readonly, retain) UINavigationItem *backItem;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, assign) id delegate;
-
+@property (nonatomic,assign) BOOL translucent;
+@property (nonatomic, retain) NSDictionary* titleTextAttributes;
 @end

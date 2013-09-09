@@ -84,5 +84,5 @@ typedef enum {
 @property (nonatomic, retain) UIView *customView;
 @property (nonatomic, assign) id target;
 @property (nonatomic) SEL action;
-
+@property (nonatomic,retain) UIColor *tintColor;
 @end

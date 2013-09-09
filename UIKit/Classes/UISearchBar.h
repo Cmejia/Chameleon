@@ -35,6 +35,7 @@
 
 #import "UIView.h"
 #import "UITextField.h"
+#import "UIInterface.h"
 
 @protocol UISearchBarDelegate;
 
@@ -49,7 +50,7 @@
 @property (nonatomic,assign) id<UISearchBarDelegate> delegate;
 @property (nonatomic) BOOL showsCancelButton;
 @property (nonatomic,copy) NSString *placeholder;
-
+@property (nonatomic,assign) UIBarStyle barStyle;
 @end
 
 

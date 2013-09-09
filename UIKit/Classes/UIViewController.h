@@ -127,5 +127,5 @@ typedef enum {
 // stubs
 @property (nonatomic, retain) UITabBarItem *tabBarItem;
 @property (nonatomic, readonly, retain) UITabBarController *tabBarController;
-
+@property(nonatomic,assign) UIRectEdge edgesForExtendedLayout;
 @end

@@ -80,5 +80,5 @@ extern NSString *const UIKeyboardBoundsUserInfoKey;
 @property (nonatomic, retain) UIScreen *screen;
 @property (nonatomic, assign) UIWindowLevel windowLevel;
 @property (nonatomic,retain) UIViewController *rootViewController;
-
+@property (nonatomic, retain) UIColor *tintColor;
 @end

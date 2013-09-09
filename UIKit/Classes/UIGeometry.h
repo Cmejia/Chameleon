@@ -34,6 +34,16 @@ typedef struct UIEdgeInsets {
     CGFloat top, left, bottom, right;  // specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
 } UIEdgeInsets;
 
+
+typedef NS_OPTIONS(NSUInteger, UIRectEdge) {
+    UIRectEdgeNone   = 0,
+    UIRectEdgeTop    = 1 << 0,
+    UIRectEdgeLeft   = 1 << 1,
+    UIRectEdgeBottom = 1 << 2,
+    UIRectEdgeRight  = 1 << 3,
+    UIRectEdgeAll    = UIRectEdgeTop | UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight
+};
+
 static inline UIEdgeInsets UIEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right) {
     return (UIEdgeInsets){top, left, bottom, right};
 }
