@@ -192,6 +192,11 @@
     }
 }
 
+- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode
+{
+    return self;
+}
+
 @end
 
 void UIImageWriteToSavedPhotosAlbum(UIImage *image, id completionTarget, SEL completionSelector, void *contextInfo)
@@ -233,3 +238,4 @@ NSData *UIImagePNGRepresentation(UIImage *image)
     CFRelease(dest);
     return [(__bridge NSData *)data autorelease];
 }
+

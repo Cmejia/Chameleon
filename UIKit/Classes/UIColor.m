@@ -231,6 +231,10 @@ static UIColor *ClearColor = nil;
     return theColor;
 }
 
+- (void)getWhite:(CGFloat*)grayLevel alpha:(CGFloat*)alphaLevel
+{
+    
+}
 - (NSString *)description
 {
     // The color space string this gets isn't exactly the same as Apple's implementation.

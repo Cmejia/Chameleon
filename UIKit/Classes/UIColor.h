@@ -65,7 +65,7 @@
 - (id)initWithPatternImage:(UIImage *)patternImage;
 
 - (UIColor *)colorWithAlphaComponent:(CGFloat)alpha;
-
+- (void)getWhite:(CGFloat*)grayLevel alpha:(CGFloat*)alphaLevel;
 - (void)set;
 - (void)setFill;
 - (void)setStroke;

@@ -41,6 +41,14 @@ typedef enum {
     UIImageOrientationRightMirrored, // vertical flip
 } UIImageOrientation;
 
+typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
+    UIImageRenderingModeAutomatic,          // Use the default rendering mode for the context where the image is used
+    
+    UIImageRenderingModeAlwaysOriginal,     // Always draw the original image, without treating it as a template
+    UIImageRenderingModeAlwaysTemplate,     // Always draw the image as a template image, ignoring its color information
+};
+
+
 @interface UIImage : NSObject {
 @private
     NSArray *_representations;
@@ -58,7 +66,7 @@ typedef enum {
 - (id)initWithCGImage:(CGImageRef)imageRef scale:(CGFloat)scale orientation:(UIImageOrientation)orientation;
 
 - (UIImage *)stretchableImageWithLeftCapWidth:(NSInteger)leftCapWidth topCapHeight:(NSInteger)topCapHeight;
-
+- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode;
 // the draw methods will all check the scale of the current context and attempt to use the best representation it can
 - (void)drawAtPoint:(CGPoint)point blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha;
 - (void)drawInRect:(CGRect)rect blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha;
