@@ -50,5 +50,5 @@ typedef enum {
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic,assign,getter=isTranslucent) BOOL translucent;
-
+@property (nonatomic, retain) UIColor *barTintColor;
 @end

@@ -102,6 +102,15 @@ static BOOL _animationsEnabled = YES;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self=[self initWithFrame:CGRectMake(0, 0, 100, 100)])
+    {
+        
+    }
+    return self;
+}
+
 - (void)dealloc
 {
     [[_subviews allObjects] makeObjectsPerformSelector:@selector(removeFromSuperview)];

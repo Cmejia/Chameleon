@@ -128,4 +128,5 @@ typedef enum {
 @property (nonatomic, retain) UITabBarItem *tabBarItem;
 @property (nonatomic, readonly, retain) UITabBarController *tabBarController;
 @property(nonatomic,assign) UIRectEdge edgesForExtendedLayout;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @end

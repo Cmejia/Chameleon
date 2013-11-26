@@ -192,6 +192,11 @@
     }
 }
 
+- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode
+{
+    return self;
+}
+
 @end
 
 void UIImageWriteToSavedPhotosAlbum(UIImage *image, id completionTarget, SEL completionSelector, void *contextInfo)

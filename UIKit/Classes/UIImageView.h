@@ -56,5 +56,5 @@
 @property (nonatomic, copy) NSArray *highlightedAnimationImages;
 @property (nonatomic) NSTimeInterval animationDuration;
 @property (nonatomic) NSInteger animationRepeatCount;
-
+@property (nonatomic,strong) UIColor* tintColor;
 @end

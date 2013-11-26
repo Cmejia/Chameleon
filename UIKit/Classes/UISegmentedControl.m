@@ -435,5 +435,8 @@ static NSString *kSSSegmentedControlEnabledKey = @"enabled";
 {
     return nil;
 }
-
+- (void)setWidth:(CGFloat)width forSegmentAtIndex:(NSUInteger)segment
+{
+    
+}
 @end

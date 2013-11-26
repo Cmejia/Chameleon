@@ -82,5 +82,5 @@ enum {
 
 - (void)setTitleTextAttributes:(NSDictionary *)attributes forState:(UIControlState)state;
 - (NSDictionary *)titleTextAttributesForState:(UIControlState)state;
-
+- (void)setWidth:(CGFloat)width forSegmentAtIndex:(NSUInteger)segment;
 @end

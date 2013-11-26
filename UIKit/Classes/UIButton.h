@@ -36,6 +36,7 @@ typedef enum {
     UIButtonTypeInfoLight,
     UIButtonTypeInfoDark,
     UIButtonTypeContactAdd,
+    UIButtonTypeSystem
 } UIButtonType;
 
 @class UILabel, UIImageView, UIImage;

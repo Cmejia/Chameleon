@@ -83,5 +83,5 @@ typedef enum {
 @property (nonatomic, readonly, retain) UIViewController *topViewController;
 @property (nonatomic,getter=isNavigationBarHidden) BOOL navigationBarHidden;
 @property (nonatomic,getter=isToolbarHidden) BOOL toolbarHidden;                  // toolbar support is not really implemented yet
-
+@property(nonatomic, readonly) UIGestureRecognizer *interactivePopGestureRecognizer;
 @end

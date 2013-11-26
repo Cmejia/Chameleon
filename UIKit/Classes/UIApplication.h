@@ -54,7 +54,8 @@ extern NSString *const UITrackingRunLoopMode;
 typedef enum {
   UIStatusBarStyleDefault,
   UIStatusBarStyleBlackTranslucent,
-  UIStatusBarStyleBlackOpaque
+  UIStatusBarStyleBlackOpaque,
+  UIStatusBarStyleLightContent
 } UIStatusBarStyle;
 
 typedef enum {

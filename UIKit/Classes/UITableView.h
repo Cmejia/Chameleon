@@ -87,7 +87,8 @@ typedef enum {
     UITableViewRowAnimationTop,
     UITableViewRowAnimationBottom,
     UITableViewRowAnimationNone,
-    UITableViewRowAnimationMiddle
+    UITableViewRowAnimationMiddle,
+    UITableViewRowAnimationAutomatic
 } UITableViewRowAnimation;
 
 @interface UITableView : UIScrollView {
@@ -187,4 +188,5 @@ typedef enum {
 @property (nonatomic) CGFloat sectionHeaderHeight;
 @property (nonatomic) CGFloat sectionFooterHeight;
 @property(nonatomic) BOOL allowsMultipleSelectionDuringEditing;
+@property (nonatomic) UIEdgeInsets separatorInset; // allows customization of the frame of cell separators
 @end
