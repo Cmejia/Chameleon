@@ -231,9 +231,9 @@ static UIColor *ClearColor = nil;
     return theColor;
 }
 
-- (void)getWhite:(CGFloat*)grayLevel alpha:(CGFloat*)alphaLevel
+- (void)getWhite:(CGFloat *)white alpha:(CGFloat *)alpha
 {
-    
+    // NO OP
 }
 - (NSString *)description
 {

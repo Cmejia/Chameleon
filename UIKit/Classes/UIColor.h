@@ -63,7 +63,7 @@
 - (id)initWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 - (id)initWithCGColor:(CGColorRef)ref;
 - (id)initWithPatternImage:(UIImage *)patternImage;
-
+- (void)getWhite:(CGFloat *)white alpha:(CGFloat *)alpha;
 - (UIColor *)colorWithAlphaComponent:(CGFloat)alpha;
 - (void)getWhite:(CGFloat*)grayLevel alpha:(CGFloat*)alphaLevel;
 - (void)set;

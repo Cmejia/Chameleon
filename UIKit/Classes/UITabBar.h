@@ -69,5 +69,5 @@
 - (BOOL)endCustomizingAnimated:(BOOL)animated;
 - (BOOL)isCustomizing;
 @property (nonatomic,assign) UIBarStyle barStyle;
-@property (nonatomic,strong) UIColor *tintColor;
+@property (nonatomic,strong) UIColor* tintColor;
 @end

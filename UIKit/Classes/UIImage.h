@@ -48,7 +48,6 @@ typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
     UIImageRenderingModeAlwaysTemplate,     // Always draw the image as a template image, ignoring its color information
 };
 
-
 @interface UIImage : NSObject {
 @private
     NSArray *_representations;
@@ -66,13 +65,13 @@ typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
 - (id)initWithCGImage:(CGImageRef)imageRef scale:(CGFloat)scale orientation:(UIImageOrientation)orientation;
 
 - (UIImage *)stretchableImageWithLeftCapWidth:(NSInteger)leftCapWidth topCapHeight:(NSInteger)topCapHeight;
-- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode;
 // the draw methods will all check the scale of the current context and attempt to use the best representation it can
 - (void)drawAtPoint:(CGPoint)point blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha;
 - (void)drawInRect:(CGRect)rect blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha;
 - (void)drawAtPoint:(CGPoint)point;
 - (void)drawInRect:(CGRect)rect;
 
+- (UIImage *)imageWithRenderingMode:(UIImageRenderingMode)renderingMode;
 @property (nonatomic, readonly) CGSize size;
 @property (nonatomic, readonly) NSInteger leftCapWidth;
 @property (nonatomic, readonly) NSInteger topCapHeight;
