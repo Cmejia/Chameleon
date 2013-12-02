@@ -78,10 +78,6 @@ static BOOL _animationsEnabled = YES;
     return [self initWithFrame:CGRectZero];
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    return [self init];
-}
 - (id)initWithFrame:(CGRect)theFrame
 {
     if ((self=[super init])) {
@@ -985,6 +981,11 @@ static BOOL _animationsEnabled = YES;
     return [_gestureRecognizers allObjects];
 }
 
+- (BOOL)drawViewHierarchyInRect:(CGRect)rect afterScreenUpdates:(BOOL)afterUpdates
+{
+    // do nothign for now
+    return NO;
+}
 + (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion
 {
     const BOOL ignoreInteractionEvents = !((options & UIViewAnimationOptionAllowUserInteraction) == UIViewAnimationOptionAllowUserInteraction);

@@ -159,6 +159,7 @@ typedef NSUInteger UIViewAnimationOptions;
 - (void)willMoveToSuperview:(UIView *)newSuperview;
 - (void)willMoveToWindow:(UIWindow *)newWindow;
 - (void)willRemoveSubview:(UIView *)subview;
+- (BOOL)drawViewHierarchyInRect:(CGRect)rect afterScreenUpdates:(BOOL)afterUpdates;
 
 + (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
 + (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion;
