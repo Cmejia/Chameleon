@@ -108,6 +108,12 @@ typedef enum {
   UIApplicationStateBackground
 } UIApplicationState;
 
+typedef NS_ENUM(NSUInteger, UIBackgroundFetchResult) {
+    UIBackgroundFetchResultNewData,
+    UIBackgroundFetchResultNoData,
+    UIBackgroundFetchResultFailed
+} NS_ENUM_AVAILABLE_IOS(7_0);
+
 typedef NSUInteger UIBackgroundTaskIdentifier;
 
 extern const UIBackgroundTaskIdentifier UIBackgroundTaskInvalid;
