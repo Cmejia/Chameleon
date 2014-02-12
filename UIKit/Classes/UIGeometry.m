@@ -42,6 +42,11 @@ CGPoint CGPointFromString(NSString *string)
     return NSPointFromString(string);
 }
 
+CGRect CGRectFromString(NSString *aString)
+{
+    return NSRectFromString(aString);
+}
+
 NSString *NSStringFromCGRect(CGRect r)
 {
     return NSStringFromRect(NSRectFromCGRect(r));

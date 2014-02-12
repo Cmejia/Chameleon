@@ -81,6 +81,7 @@ NSString *NSStringFromCGPoint(CGPoint p);
 NSString *NSStringFromCGRect(CGRect r);
 NSString *NSStringFromCGSize(CGSize s);
 CGPoint CGPointFromString(NSString *string);
+CGRect CGRectFromString(NSString *aString);
 
 NSString *NSStringFromCGAffineTransform(CGAffineTransform transform);
 
