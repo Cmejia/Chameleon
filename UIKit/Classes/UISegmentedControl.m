@@ -439,4 +439,13 @@ static NSString *kSSSegmentedControlEnabledKey = @"enabled";
 {
     
 }
+- (void)insertSegmentWithTitle:(NSString *)title atIndex:(NSUInteger)segment animated:(BOOL)animated
+{
+    
+}
+
+- (void)removeSegmentAtIndex:(NSUInteger)segment animated:(BOOL)animated
+{
+    
+}
 @end
