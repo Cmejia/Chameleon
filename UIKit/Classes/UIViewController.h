@@ -72,7 +72,7 @@ typedef enum {
 }
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle;	// won't load a nib no matter what you do!
-
+- (instancetype)initWithCoder:(NSCoder *)coder;
 - (BOOL)isViewLoaded;
 - (void)loadView;
 - (void)viewDidLoad;
@@ -130,4 +130,6 @@ typedef enum {
 @property(nonatomic,assign) UIRectEdge edgesForExtendedLayout;
 @property(nonatomic,readonly) BOOL prefersStatusBarHidden;
 @property(nonatomic,assign) CGSize preferredContentSize;
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion;
+
 @end

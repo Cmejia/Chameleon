@@ -52,7 +52,7 @@ extern NSString *const UITableViewIndexSearch;
 - (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath;
-
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @protocol UITableViewDataSource <NSObject>
@@ -174,6 +174,7 @@ typedef enum {
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate;
 - (NSArray *)indexPathsForSelectedRows;
 - (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier;
+
 @property (nonatomic, readonly) UITableViewStyle style;
 @property (nonatomic, assign) id<UITableViewDelegate> delegate;
 @property (nonatomic, assign) id<UITableViewDataSource> dataSource;

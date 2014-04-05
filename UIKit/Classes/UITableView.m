@@ -886,15 +886,14 @@ const CGFloat _UITableViewDefaultRowHeight = 43;
     }
 }
 
-- (NSArray *)indexPathsForSelectedRows
-{
-    return nil;
-}
 - (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
 }
 - (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier
 {
     
+- (NSArray *)indexPathsForSelectedRows
+{
+    return nil;
 }
 @end

@@ -61,6 +61,15 @@
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    if ((self=[super init])) {
+        _contentSizeForViewInPopover = CGSizeMake(320,1100);
+        _hidesBottomBarWhenPushed = NO;
+    }
+    return self;
+}
+
 - (void)dealloc
 {
     [_view _setViewController:nil];
@@ -301,6 +310,10 @@
     return [self _nearestParentViewControllerThatIsKindOf:[UISplitViewController class]];
 }
 
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion
+{
+    
+}
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@: %p; title = %@; view = %@>", [self className], self, self.title, self.view];
