@@ -34,7 +34,7 @@
 extern NSString *const UITableViewIndexSearch;
 
 @class UITableView;
-
+@class UINib;
 @protocol UITableViewDelegate <UIScrollViewDelegate>
 @optional
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -172,7 +172,8 @@ typedef enum {
 - (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate;
-
+- (NSArray *)indexPathsForSelectedRows;
+- (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier;
 @property (nonatomic, readonly) UITableViewStyle style;
 @property (nonatomic, assign) id<UITableViewDelegate> delegate;
 @property (nonatomic, assign) id<UITableViewDataSource> dataSource;

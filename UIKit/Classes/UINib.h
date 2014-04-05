@@ -6,9 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKitDefines.h>
 
-NS_CLASS_AVAILABLE_IOS(4_0) @interface UINib : NSObject {
+@interface UINib : NSObject {
   @private
     id storage;
 }

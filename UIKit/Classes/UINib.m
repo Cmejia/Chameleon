@@ -27,17 +27,21 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "UINibLoading.h"
+#import "UINib.h"
 
-@implementation NSBundle (UINibLoading)
-- (NSArray *)loadNibNamed:(NSString *)name owner:(id)owner options:(NSDictionary *)options
+@implementation UINib
++ (UINib *)nibWithNibName:(NSString *)name bundle:(NSBundle *)bundleOrNil
 {
     return nil;
 }
-@end
 
-@implementation NSObject (UINibLoading)
-- (void)awakeFromNib
++ (UINib *)nibWithData:(NSData *)data bundle:(NSBundle *)bundleOrNil
 {
+    return nil;
+}
+
+- (NSArray *)instantiateWithOwner:(id)ownerOrNil options:(NSDictionary *)optionsOrNil
+{
+    return nil;
 }
 @end

@@ -283,6 +283,14 @@
     return controller;
 }
 
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
+{
+    
+}
+- (void)setNeedsStatusBarAppearanceUpdate
+{
+    
+}
 - (UINavigationController *)navigationController
 {
     return [self _nearestParentViewControllerThatIsKindOf:[UINavigationController class]];
