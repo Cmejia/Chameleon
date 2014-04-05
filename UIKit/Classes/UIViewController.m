@@ -310,10 +310,6 @@
     return [self _nearestParentViewControllerThatIsKindOf:[UISplitViewController class]];
 }
 
-- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion
-{
-    
-}
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@: %p; title = %@; view = %@>", [self className], self, self.title, self.view];

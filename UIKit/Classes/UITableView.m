@@ -891,7 +891,7 @@ const CGFloat _UITableViewDefaultRowHeight = 43;
 }
 - (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier
 {
-    
+}
 - (NSArray *)indexPathsForSelectedRows
 {
     return nil;
