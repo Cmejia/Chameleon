@@ -40,5 +40,5 @@
 - (id)initWithNSView:(NSView *)aNSView;
 
 @property (nonatomic, retain) NSView *NSView;
-
+@property (nonatomic, assign) BOOL geometryFlipped;
 @end

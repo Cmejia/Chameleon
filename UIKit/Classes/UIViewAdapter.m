@@ -44,6 +44,7 @@
 
 @implementation UIViewAdapter
 @synthesize NSView=_view;
+@synthesize geometryFlipped;
 
 #pragma mark -
 #pragma mark Initialization
@@ -53,6 +54,7 @@
     if ((self=[super initWithFrame:frame])) {
         _clipView = [[UINSClipView alloc] initWithFrame:NSMakeRect(0,0,frame.size.width,frame.size.height) parentView:self];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_hierarchyMayHaveChangedNotification:) name:UIViewHiddenDidChangeNotification object:nil];
+        geometryFlipped = YES;
     }
     return self;
 }
@@ -113,7 +115,7 @@
     CALayer *clipLayer = [_clipView layer];
     
     // setting these here because I've had bad experiences with NSView changing some layer properties out from under me.
-    clipLayer.geometryFlipped = YES;
+    clipLayer.geometryFlipped = self.geometryFlipped;
     
     // always make sure it's at the very bottom
     [layer insertSublayer:clipLayer atIndex:0];

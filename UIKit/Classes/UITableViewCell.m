@@ -63,6 +63,7 @@ extern CGFloat _UITableViewDefaultRowHeight;
 {
     if ((self=[self initWithFrame:CGRectMake(0,0,320,_UITableViewDefaultRowHeight)])) {
         _style = style;
+        _selectionStyle = UITableViewCellSelectionStyleBlue;
         _reuseIdentifier = [reuseIdentifier copy];
     }
     return self;
@@ -187,6 +188,10 @@ extern CGFloat _UITableViewDefaultRowHeight;
 {
     BOOL shouldHighlight = (_highlighted || _selected);
     _selectedBackgroundView.hidden = !shouldHighlight;
+    if (_selectionStyle==UITableViewCellSelectionStyleGray)
+    {
+        self.backgroundColor = (shouldHighlight) ? [UIColor lightGrayColor] : [UIColor clearColor];
+    }
     [self _setHighlighted:shouldHighlight forViews:[self subviews]];
 }
 
