@@ -77,6 +77,7 @@
     _delegate = newDelegate;
     _delegateHas.shouldStartLoadWithRequest = [_delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)];
     _delegateHas.didFailLoadWithError = [_delegate respondsToSelector:@selector(webView:didFailLoadWithError:)];
+    _delegateHas.didStartLoad = [_delegate respondsToSelector:@selector(webViewDidStartLoad:)];
     _delegateHas.didFinishLoad = [_delegate respondsToSelector:@selector(webViewDidFinishLoad:)];
 }
 
@@ -186,6 +187,13 @@
 #pragma mark -
 #pragma mark WebView Frame Load Delegate
 
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
+{
+    if (_delegateHas.didStartLoad) {
+        [_delegate webViewDidStartLoad:self];
+    }
+    
+}
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
     if (_delegateHas.didFinishLoad) {
